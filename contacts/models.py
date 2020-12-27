@@ -44,8 +44,9 @@ class Contact(models.Model):
     designation = models.CharField(max_length=20,choices=DESIGNATION,default='NA')
 
   
-    department = models.CharField(max_length=20)
+    department = models.CharField(max_length=20,blank=True)
     email = models.EmailField(max_length=70)
+    email1 = models.EmailField(max_length=70,blank=True)
     mob_no = models.CharField(max_length=20)
     direct_no = models.CharField(max_length=20)
     notes = models.TextField()
@@ -53,7 +54,7 @@ class Contact(models.Model):
         ('KIIT','KIIT'),
         ('Others','Others'),
     ]
-    institution = forms.ChoiceField(choices=INSTITUTIONS,widget=forms.RadioSelect)
+    institution =  models.CharField(max_length=20,blank=True)
     SCHOOL = (
          ('NA','NA'),
         ('School 1','School 1'),
