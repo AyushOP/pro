@@ -48,27 +48,28 @@ class Contact(models.Model):
     email = models.EmailField(max_length=70)
     email1 = models.EmailField(max_length=70,blank=True)
     mob_no = models.CharField(max_length=20)
+    mob_no1 = models.CharField(max_length=20,blank=True)
     direct_no = models.CharField(max_length=20)
     notes = models.TextField()
     INSTITUTIONS = [
         ('KIIT','KIIT'),
         ('Others','Others'),
     ]
-    institution =  models.CharField(max_length=20,blank=True)
+    institute_name =  models.CharField(max_length=20,blank=True)
     SCHOOL = (
          ('NA','NA'),
         ('School 1','School 1'),
         ('School 2','School 2'),
         ('School 3','School 3'),
     )
-    school = models.CharField(max_length=20,choices=SCHOOL,default='NA')
+    school = models.CharField(max_length=20,choices=SCHOOL,default='NA',blank=True)
     STREAM = (
           ('NA','NA'),
         ('Stream1.1','Stream1.1'),
         ('Stream 1.2','Stream 1.2'),
         ('Stream 1.3','Stream 1.3'),
     )
-    stream = models.CharField(max_length=20,choices=STREAM,default='NA')
+    stream = models.CharField(max_length=20,choices=STREAM,default='NA',blank=True)
     yop = models.CharField(max_length=10)
     degree = models.CharField(max_length=50)
     MONTH = (
@@ -126,6 +127,7 @@ class Contact(models.Model):
     )
     Of_details = models.CharField(max_length=20,choices=OFFICE_DETAILS,default='NA')
     board_line_number = models.CharField(max_length=20)
+    board_line_number1 = models.CharField(max_length=20,blank=True)
     address = models.TextField(max_length=200)
     country = models.CharField(max_length=20)
     city = models.CharField(max_length=15)
